@@ -5,17 +5,18 @@ import PackageDescription
 
 let package = Package(
     name: "Extensions",
+    platforms: [
+        .iOS(.v13) // iOS 버전을 여기에 명시합니다. 필요에 따라 버전을 변경할 수 있습니다.
+    ],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "Extensions",
             targets: ["Extensions"]),
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "Extensions"),
+            name: "Extensions",
+            dependencies: []),
         .testTarget(
             name: "ExtensionsTests",
             dependencies: ["Extensions"]),
